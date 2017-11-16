@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing</title>
+
+	<style type="text/css">
+		
+		.outer{border: 1px solid #ccc;background: #fc9;color: #fff; margin: 50px auto;padding: 50px;}
+		.div1{width: 80px;height: 80px;background: red;float: left;}
+		.div2{width: 80px;height: 80px;background: blue;float: left;}
+		.div3{width: 80px;height: 80px;background: sienna;float: left;}
+		.clear{clear:both; height: 0; line-height: 0; font-size: 0}
+
+		.outer {zoom:1;}    /*==for IE6/7 Maxthon2==*/
+		.outer:after {clear:both;content:'.';display:block;width: 0;height: 0;visibility:hidden;}/*==for FF/chrome/opera/IE8==*/
+
+		.outer1{border: 1px solid #ccc;background: #fc9;color: #fff; margin: 50px auto;padding: 50px; overflow: hidden;}
+		.div11{width: 80px;height: 80px;background: red;float: left;}
+		.div12{width: 80px;height: 80px;background: blue;float: left;}
+		.div13{width: 80px;height: 80px;background: sienna;float: left;}
+		
+
+		.abs{
+			position: relative;
+			left:10px;
+			top: 0;
+			background-color: pink;
+		}
+
+		.absouter{
+			background-color: black;
+			margin: 20px;
+			padding:20px;
+		}
+
+		.flt{
+			float: left;
+			background-color: yellow;
+		}
+
+		.inlineblc{
+			display: inline-block;
+		}
+
+	</style>
+	 
+</head>
+<body>
+	
+	<div class="outer">
+	    <div class="div1">1</div>
+	    <div class="div2">2</div>
+	    <div class="div3">3</div>
+	 <!--    <div class="clear"></div> -->
+	</div>
+
+
+	<div class="outer1">
+	    <div class="div11">1</div>
+	    <div class="div12">2</div>
+	    <div class="div13">3</div>
+	 <!--    <div class="clear"></div> -->
+	</div>
+
+	<div class="absouter"> 
+		<div class="abs">
+			abs
+		</div>
+	</div>
+	
+
+	<div class="flt">
+		<span>1</span>
+		<span>2</span>
+	</div>
+
+	<div class="inlineblc">
+		<div></div>
+		<span>float1</span>
+		<span>float2</span>
+	</div>
+ 
+</body>
+</html>
+
+
+
+
