@@ -1,0 +1,39 @@
+
+.photostreampage{
+	height: 100%; 
+}
+
+.photostreampage>div{
+	float: left;
+	width: 48%;
+	padding: 0 1%;
+	height: 100%;
+	min-width: 300px;
+	background-color: yellow;
+}
+
+
+.photostreampage>div:first-child{
+	background-color: transparent; 
+	text-align: center; 
+}
+
+.photostreampage>div:first-child>img{
+	margin-top: 25%;
+	width: 35%; 
+}
+
+.photostreampage>div:first-child>h1{
+	color: white; 
+	text-shadow: 5px 5px 5px #2b4669;
+}
+
+.photostreampage>div:first-child>p{
+	color: #8ee6f1;
+}
+
+.photostreampage>div:last-child{
+	background-color: #f5f4f0; 
+	overflow-y:scroll;
+    height: 100%;
+}

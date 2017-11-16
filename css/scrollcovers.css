@@ -1,0 +1,201 @@
+
+.welcomepage, .coverspage, .photostreampage{
+    position: absolute;
+    width: 100%; 
+    top: 0;
+    left: 0;  
+    font-family: Excellence In Motion V3 Bold;   
+}
+
+
+
+.welcomepage{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomepage>p{
+    font-size: 5rem;
+  /*  margin-left: 40%;
+    margin-top: 280px;*/
+    color: white;
+    opacity: 0.5;
+ /*   background-image: -webkit-linear-gradient( white, #97e7ee, #a1ebf1,  #a9edee, #b1ebf2, #bbedee, #c4f1f3, #cbf1ef, #d4f2f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.scrollbox{
+    width: 100%; 
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: transparent;
+    margin: 0 auto; 
+
+    transition: all 0.5s; 
+}
+
+.scrollbox div:first-child{
+/*    margin-left: 3%;*/
+}
+
+.scrollbox div:last-child{
+    margin-right: 3%;
+}
+
+.scrollbox div{
+    width: 28%; 
+    background-color: transparent;
+    display: inline-block;
+    margin: 1px;
+
+    transition: all 0.5s; 
+
+/*    border: black solid 1px;*/
+
+
+}
+
+
+.scrollbox div:nth-child(even){
+    margin-top: 50px;
+    position: relative;
+    top: -50px;
+}
+
+.scrollbox>div>p{
+    height: 3px;
+    text-align: center; 
+    margin-right: 6rem;
+    font-weight: 700;
+    font-family: Excellence In Motion V3 Bold;
+    font-size: 2.625rem;
+    line-height: 1;
+    opacity: 0.2;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    margin-left: 50px;
+
+    transition: all 0.5s;
+}
+
+.scrollbox>div>div>p{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 80px;
+    width: 45%;
+     
+    opacity: 0.8;
+    font-weight: 600;
+    font-family: Excellence In Motion V3 Bold;
+    font-size: 2rem;
+    line-height: 1; 
+    color: white;
+  
+  /*  -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white; */
+
+   /* transition: all 0.5s;*/
+} 
+
+.scrollbox>div>div img{
+    width: 50%;
+    transition: all 0.3s;
+    box-shadow: 10px 10px 10px #2b4669;
+}
+
+.scrollbox>div>div{
+    text-align: right; 
+    width: 100%;
+    vertical-align: center;
+}
+
+
+
+
+.scrollbox:hover{
+  /* transform: translateX(-100px); */
+       
+}
+
+
+.scrollbox>div:hover{  
+  /*  transform: scale(1.1);   */
+  /*  transform: translateX(-100px); 
+    width: 650px; 
+    animation: coverboxwidth 0.5s;*/
+} 
+
+@keyframes coverboxwidth
+{
+from {width:500px;}
+to {width:650px;}
+}
+
+@-webkit-keyframes coverboxwidth /*Safari and Chrome*/
+{
+from {width:500px;}
+to {width:650px;}
+}
+
+.scrollbox>div:hover>p{
+     transform: scale(2.5); 
+}
+
+.scrollbox>div:hover>div{
+     transform: scale(1.1);
+ /*   transform: translateX(-5px);
+    transform: translateY(25px);*/
+}
+
+
+.scrollbox>div:hover>div>p{ 
+    /*opacity: 1; */
+}
+
+.scrollbox>div:hover>div>img{ 
+   /*transform: translateX(50px); */
+   transform: scale(1.1);   
+   transform: translateX(50px);
+}
+
+
+.scroll-covers-move {
+  transition: all 1s;
+}
+
+
+
+.transtitle-enter, .transtitle-leave-to{
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.transtitle-enter-active, .transtitle-leave-active{
+    transition: all 0.2s;
+} 
+
+.transtitle-enter-to, .transtitle-leave{
+    opacity: 1;  
+}
+
+
+
+.coverpage_header{
+    height: 280px;
+    text-align: center;
+}
+
+.coverpage_header>h1{
+    color: #8ee6f1;
+    padding-top: 100px;
+    font-size: 4rem;
+    text-shadow: 7px 7px 7px #2b4669;
+}
+
+
+
+

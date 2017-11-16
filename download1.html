@@ -1,0 +1,35 @@
+<html>  
+<head>  
+<style type="text/css"> 
+.test{
+width:200px;
+height:50px;
+background-color:gray;
+color:white;
+text-align:center;
+cursor:pointer;
+display:table-cell;
+vertical-align:middle;
+}
+</style>
+<script type="text/javascript">
+function scale1(){
+document.getElementById("test").style.WebkitTransform="scale(1.1,1)";
+document.getElementById("test").style.WebkitTransform="translate(120px)";
+document.getElementById("test").style.WebkitTransform="skew(20deg)";
+document.getElementById("test").style.WebkitTransform="rotate(370deg)";
+document.getElementById("test").style.WebkitTransform="translateX(500px)";
+}
+function scale2(){
+document.getElementById("test").style.WebkitTransform="scale(1)";
+}
+</script>
+</head>  
+<body>  
+<div style="margin:0 0 0 100px;">
+<div class="test" id="test" onMouseOver="scale1()" onMouseOut="scale2()">
+这是一个缩放效果测试！
+</div>
+<div>
+</body>
+</html>
