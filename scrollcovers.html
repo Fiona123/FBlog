@@ -9,6 +9,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/scrollcovers.css"> 
 	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/bodymovin.js"></script>
 	<script type="text/javascript">
 
 
@@ -42,7 +43,8 @@
 <div id="vm">
 
 	<div class="welcomepage" v-show="displayPage === 0">
-		<transition
+		<!-- <div id="bodymovin" style="width:100px; height: 100px;"></div> -->
+	 	<transition
 			  appear  
 			  appear-active-class="animated hinge" 
 			  appear-to-class="animated bounceOutRight"
@@ -50,10 +52,11 @@
 		>
 		<p>Appear</p>
 		</transition> 
-
-	</div>
+ 
+	</div> 
 
 	<transition name="coverspagetrans" enter-active-class="animated slideInDown">
+		
 		<div class="coverspage" v-show="displayPage === 1">
 
 			<header class="coverpage_header">
@@ -85,42 +88,23 @@
 				<h1>{{displayAlbum.title}}</h1>
 				<p>description of Album</p>	
 			</div>
-			<div>
- 
-				<section class="photosbox">
-
+			<div> 
+				<section class="photosbox"> 
 					<img src="pictures/photos/p6.jpg" class='photo_big'>
 					<img src="pictures/photos/p10.jpg" class='photo_big'>
-					<img src="pictures/photos/p9.jpg" class='photo_big'>
-
+					<img src="pictures/photos/p9.jpg" class='photo_big'> 
 					<img src="pictures/photos/p11.jpg" class='photo_big'>
-					<img src="pictures/photos/p12.jpg" class='photo_big'>
-
-
-					<img src="pictures/photos/p14.jpg" class='photo_big'>
-
-				 
-<!-- 					<img src="pictures/photos/p1.jpg" class='photo_big'>
-					<img src="pictures/photos/p2.jpg" class='photo_medium'>
-					<img src="pictures/photos/p3.jpg" class='photo_medium_omega'>
-					<img src="pictures/photos/p4.jpg" class='photo_medium'>
-					<img src="pictures/photos/p5.jpg" class='photo_medium_omega'>
-					<img src="pictures/photos/p1.jpg" class='photo_big'>
-					<img src="pictures/photos/p2.jpg" class='photo_medium'>
-					<img src="pictures/photos/p3.jpg" class='photo_medium_omega'>
-					<img src="pictures/photos/p4.jpg" class='photo_medium'>
-					<img src="pictures/photos/p5.jpg" class='photo_medium_omega'> -->
+					<img src="pictures/photos/p12.jpg" class='photo_big'> 
+					<img src="pictures/photos/p14.jpg" class='photo_big'> 
 				</section>
 			</div>
 		</div>
-	</transition>
-
+	</transition> 
 
 </div>
 	
 
-<div></div>
-
+<div></div> 
 	
 	<script type="text/javascript">
 	//	document.getElementById("scrollbox").scrollLeft = 400;
@@ -180,7 +164,7 @@
 		EventUtil.addHandler(document.getElementById("scrollbox"), "mousewheel", handleMouseWheel);
 		 
 	</script>
-
+ 
 </body>
 </html>
 
