@@ -1,0 +1,17 @@
+
+
+/*
+
+	A scroll panel to show picture and texts 
+
+	properties:
+	
+	events: 
+		(1) selectPhoto;
+ 
+*/
+
+
+Vue.component('f_scrollpanel', {
+	
+});

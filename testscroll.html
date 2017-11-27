@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scrolling Covers</title>
+	<script type="text/javascript" src="libs/vue.js"></script>
+
+	<script type="text/javascript" src="js/EventUtil.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="css/photostream.css"> 
+	<link rel="stylesheet" type="text/css" href="css/scrollcovers.css"> 
+
+	<script type="text/javascript" src="js/f_scrollpanel.js"></script>
+
+
+	<script type="text/javascript"> 
+
+		function handleMouseWheel(event){
+			 
+			//var currentLeft = document.getElementById("scrollbox").
+			var scrollBox = document.getElementById("scrollbox");
+			var childs = scrollBox.childNodes;
+			var offWidth = 0;
+			var childsWidth = 0;
+			var range = 250;
+			for(var i=0; i< childs.length;i++){
+				childsWidth += childs[i].offsetWidth; 
+			}
+
+			//Left Side Scroll Max;
+			offWidth = scrollBox.offsetWidth - childsWidth - range; 
+
+			for(var i=0; i< childs.length;i++){
+				 
+				EventUtil.setTranslateX(childs[i], EventUtil.getMouseWheelDelta(event), offWidth, 0);
+			}
+		}
+	</script>
+
+
+</head>
+<body >
+	
+	
+<div id="vm"> 
+ 	<f-scrollpanel> </f-scrollpanel>
+</div>
+	
+
+<div></div> 
+	
+	<script type="text/javascript">
+	 	var vm = new Vue({
+	 		el: "#vm",
+	 		data: {
+
+	 		}
+	 	})
+	/*	EventUtil.addHandler(document.getElementById("scrollbox"), "DOMMouseScroll", handleMouseWheel);
+		EventUtil.addHandler(document.getElementById("scrollbox"), "mousewheel", handleMouseWheel);*/
+		 
+	</script>
+ 
+</body>
+</html>
+
+
+
+

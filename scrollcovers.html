@@ -8,8 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="css/photostream.css">
 	
 	<link rel="stylesheet" type="text/css" href="css/scrollcovers.css"> 
-	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="js/bodymovin.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css"> 
+
+
 	<script type="text/javascript">
 
 
@@ -62,9 +63,10 @@
 			<header class="coverpage_header">
 				
 				<h1>PHOTOS</h1>
-			</header>
+			</header> 
+ 
 			<div id="scrollbox" class="scrollbox"> 
-				<div class="coverbox" v-for="(cover, index) in covers" :key="cover" 
+				<div v-for="(cover, index) in covers" :key="cover" 
 				v-on:mouseover="setFocus(index)" v-on:click="setPage(2, cover)">
 					<p>0{{index}}</p> 
 					<div> 
@@ -74,9 +76,9 @@
 						<img v-bind:src="cover.img">
 					</div>
 					
-				</div>
-				 
+				</div>  
 			</div>  
+			 
 		</div> 
 	</transition>
 
