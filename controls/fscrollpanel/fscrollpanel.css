@@ -12,14 +12,53 @@
 */
 
   
-
+/**iPhone 6 Portrait **/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {   
  
+    .scrollbox{
+        width: 100%; 
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: transparent;
+        margin: 0 auto;  
+        transition: all 0.5s; 
+    }
+
+    .scrollbox div{
+        width: 80%;   
+        display: inline-block;
+        margin: 1px; 
+        transition: all 0.5s;  
+    }
+}  
+
+/**iPhone 6 landscape **/    
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {  
+    .scrollbox{
+        width: 100%; 
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: transparent;
+        margin: 0 auto;  
+        transition: all 0.5s; 
+    }
+
+    .scrollbox div{
+        width: 80%;   
+        display: inline-block;
+        margin: 1px; 
+        transition: all 0.5s;  
+    }
+} 
+    
+
+
 @media screen and (min-width: 480px) {
     .scrollbox{
         width: 100%; 
         overflow: hidden;
         white-space: nowrap;
-        background-color: green;
+        background-color: transparent;
         margin: 0 auto;  
         transition: all 0.5s; 
     }
@@ -28,8 +67,7 @@
     .scrollbox div{
         width: 28%; 
         min-width: 300px;
-        max-width: 450px;
-        background-color: transparent;
+        max-width: 450px;  
         display: inline-block;
         margin: 1px; 
         transition: all 0.5s;  
@@ -41,14 +79,13 @@
         width: 100%; 
         overflow: hidden;
         white-space: nowrap;
-        background-color: red;
+        background-color: transparent;
         margin: 0 auto;  
         transition: all 0.5s; 
     }
 
     .scrollbox div{
-        width: 80%;  
-        background-color: transparent;
+        width: 80%;   
         display: inline-block;
         margin: 1px; 
         transition: all 0.5s;  
