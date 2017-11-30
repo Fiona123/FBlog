@@ -47,12 +47,11 @@
 
 .scrollbox div{
     width: 28%; 
+    min-width: 300px;
     background-color: transparent;
     display: inline-block;
-    margin: 1px;
-
-    transition: all 0.5s; 
-
+    margin: 1px; 
+    transition: all 0.5s;  
 /*    border: black solid 1px;*/
 
 
