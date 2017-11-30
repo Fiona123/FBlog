@@ -57,6 +57,7 @@ Vue.component('fscrollpanel', {
 			   
 		selectCover: function(cover){
 			//return cover 
+			this.$emit('selectcover', 2, cover);
 		},
 
 		handleMouseScroll: function(event){

@@ -10,11 +10,14 @@
 	<link rel="stylesheet" type="text/css" href="css/scrollcovers.css"> 
 	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css"> 
 
+	<link rel="stylesheet" type="text/css" href="controls/fscrollpanel/fscrollpanel.css">  
+	<script type="text/javascript" src="controls/fscrollpanel/fscrollpanel.js"></script>  
+
 
 	<script type="text/javascript">
 
 
-		function handleMouseWheel(event){
+	/*	function handleMouseWheel(event){
 			 
 			//var currentLeft = document.getElementById("scrollbox").
 			var scrollBox = document.getElementById("scrollbox");
@@ -33,7 +36,7 @@
 				 
 				EventUtil.setTranslateX(childs[i], EventUtil.getMouseWheelDelta(event), offWidth, 0);
 			}
-		}
+		}*/
 	</script>
 
 
@@ -56,28 +59,14 @@
  
 	</div> 
 
-	<transition name="coverspagetrans" enter-active-class="animated slideInDown">
-		
-		<div class="coverspage" v-show="displayPage === 1">
-
-			<header class="coverpage_header">
-				
+	<transition name="coverspagetrans" enter-active-class="animated slideInDown"> 
+		<div class="coverspage" v-show="displayPage === 1"> 
+			<header class="coverpage_header"> 
 				<h1>PHOTOS</h1>
 			</header> 
- 
-			<div id="scrollbox" class="scrollbox"> 
-				<div v-for="(cover, index) in covers" :key="cover" 
-				v-on:mouseover="setFocus(index)" v-on:click="setPage(2, cover)">
-					<p>0{{index}}</p> 
-					<div> 
-						<transition name="transtitle">
-							<p v-if="focusCover == index">{{cover.title}}</p>
-						</transition>  
-						<img v-bind:src="cover.img">
-					</div>
-					
-				</div>  
-			</div>  
+
+			<fscrollpanel el-id="fscrollbox" v-bind:cover-arr = "covers" v-on:selectcover="setPage"> 
+			</fscrollpanel> 
 			 
 		</div> 
 	</transition>
@@ -113,8 +102,7 @@
 
 		var vm = new Vue({
 			el: "#vm",
-			data:{
-				items: [1,2,3,4,5,6,7,8,9,10],
+			data:{ 
 				covers:[
 					{title: "Inutt", img:"pictures/covers/cover1.jpg"},
 					{title: "Bonobo", img:"pictures/covers/cover2.jpg"},
@@ -131,25 +119,11 @@
 					{title: "Glass Candy", img:"pictures/covers/p3.jpg"},
 					{title: "Glass Candy", img:"pictures/covers/p4.jpg"},
 					{title: "Glass Candy", img:"pictures/covers/p5.jpg"}
-				],
-				scrollLeft: 500,
-				focusCover: null,
-				show: true,
+				], 
 				displayPage: 0,
 				displayAlbum: "Inutt"
 			},
-			methods: {
-				setFocus: function(index){
-					this.focusCover = index;
-				},
-			    randomIndex: function(){
-					return Math.floor( Math.random() * this.items.length );
-				}, 
-				shuffleItems: function(){
-					this.items.sort(function(a,b){ 
-						return Math.random()>.5 ? -1 : 1;
-					});
-				}, 
+			methods: {  
 
 				setPage: function(pageId, param){
 					this.displayPage = pageId;
@@ -162,9 +136,9 @@
 
 
 		 
-		EventUtil.addHandler(document.getElementById("scrollbox"), "DOMMouseScroll", handleMouseWheel);
+	/*	EventUtil.addHandler(document.getElementById("scrollbox"), "DOMMouseScroll", handleMouseWheel);
 		EventUtil.addHandler(document.getElementById("scrollbox"), "mousewheel", handleMouseWheel);
-		 
+		 */
 	</script>
  
 </body>
