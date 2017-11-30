@@ -1,36 +1,19 @@
 
+
+/*
+
+	A scroll panel to show picture and texts 
+
+	properties:
+	
+	events: 
+		(1) selectPhoto;
  
+*/
 
-.welcomepage, .coverspage, .photostreampage{
-    position: absolute;
-    width: 100%; 
-    top: 0;
-    left: 0;  
-    font-family: Excellence In Motion V3 Bold;   
-}
+  
 
-
-
-.welcomepage{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.welcomepage>p{
-    font-size: 5rem;
-  /*  margin-left: 40%;
-    margin-top: 280px;*/
-    color: white;
-    opacity: 0.5;
- /*   background-image: -webkit-linear-gradient( white, #97e7ee, #a1ebf1,  #a9edee, #b1ebf2, #bbedee, #c4f1f3, #cbf1ef, #d4f2f3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-}
-
-
-
+ 
 @media screen and (min-width: 480px) {
     .scrollbox{
         width: 100%; 
@@ -39,6 +22,17 @@
         background-color: green;
         margin: 0 auto;  
         transition: all 0.5s; 
+    }
+
+
+    .scrollbox div{
+        width: 28%; 
+        min-width: 300px;
+        max-width: 450px;
+        background-color: transparent;
+        display: inline-block;
+        margin: 1px; 
+        transition: all 0.5s;  
     }
 }
 
@@ -51,30 +45,21 @@
         margin: 0 auto;  
         transition: all 0.5s; 
     }
-}
 
+    .scrollbox div{
+        width: 80%;  
+        background-color: transparent;
+        display: inline-block;
+        margin: 1px; 
+        transition: all 0.5s;  
+    }
+} 
 
-
-
-.scrollbox div:first-child{
-/*    margin-left: 3%;*/
-}
 
 .scrollbox div:last-child{
     margin-right: 3%;
 }
 
-.scrollbox div{
-    width: 28%; 
-    min-width: 300px;
-    background-color: transparent;
-    display: inline-block;
-    margin: 1px; 
-    transition: all 0.5s;  
-/*    border: black solid 1px;*/
-
-
-}
 
 
 .scrollbox div:nth-child(even){
