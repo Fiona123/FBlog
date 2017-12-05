@@ -2,6 +2,10 @@
 
 var EventUtil = { 
 
+
+/**
+	Basic Methods
+**/
 	addHandler: function(element, type, handler){
 		if(typeof element.addEventListener == "function"){
 			//DOM2 Level Event
@@ -35,7 +39,9 @@ var EventUtil = {
 	},
 
 	getTarget: function(event){
-		return event.target || event.srcElement;  //IE - event.srcElement.
+		//IE - event.srcElement.
+		//事件代理中，通过target或srcElement获取触发事件的元素。
+		return event.target || event.srcElement;  
 	},
 
 	preventDefault: function(event){
@@ -56,6 +62,15 @@ var EventUtil = {
 		}
 	},
 
+
+
+
+
+
+
+/**
+	Other Methods
+**/
 
 	//Event Monitors
 
