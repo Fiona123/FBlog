@@ -1,66 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Vue.JS Learning</title>
+	<title>Scrolling Covers</title>
+	<script type="text/javascript" src="js/EventUtil.js"></script>
 	<script type="text/javascript" src="libs/vue.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="css/photostream.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/scrollcovers.css"> 
+	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css"> 
+
+	<link rel="stylesheet" type="text/css" href="controls/fscrollpanel/fscrollpanel.css">  
+	<script type="text/javascript" src="controls/fscrollpanel/fscrollpanel.js"></script>  
+
+
+	<script type="text/javascript">
+
+
+	/*	function handleMouseWheel(event){
+			 
+			//var currentLeft = document.getElementById("scrollbox").
+			var scrollBox = document.getElementById("scrollbox");
+			var childs = scrollBox.childNodes;
+			var offWidth = 0;
+			var childsWidth = 0;
+			var range = 250;
+			for(var i=0; i< childs.length;i++){
+				childsWidth += childs[i].offsetWidth; 
+			}
+
+			//Left Side Scroll Max;
+			offWidth = scrollBox.offsetWidth - childsWidth - range; 
+
+			for(var i=0; i< childs.length;i++){
+				 
+				EventUtil.setTranslateX(childs[i], EventUtil.getMouseWheelDelta(event), offWidth, 0);
+			}
+		}*/
+	</script>
+
+
 </head>
-<body class='bodyhome'>
+<body >
+	
+	
+<div id="vm">
 
-	<section class="app">
-		<header class="headercontainer">
-			<h1><a href="#">Fiona Li</a></h1>
-			<ol class="menulinks">
-				<li><a href="#">introduction</a></li>
-				<li><a href="#">photos</a></li>
-				<li><a href="mailto:1214962388@qq.com">email</a></li>
-			</ol>
-		</header>
+	<div class="welcomepage" v-show="displayPage === 0">
+		<!-- <div id="bodymovin" style="width:100px; height: 100px;"></div> -->
+	 	<transition
+			  appear  
+			  appear-active-class="animated hinge" 
+			  appear-to-class="animated bounceOutRight"
+			  v-on:after-appear="setPage(1)"
+		>
+		<p>Appear</p>
+		</transition> 
+ 
+	</div> 
 
-		<section class="main">
-			<section class="left_side">
-				<div>
-					<img class="photobox" src="pictures/photo.jpeg">
-				</div>
-				
-			</section>
+	<transition name="coverspagetrans" enter-active-class="animated slideInDown"> 
+		<div class="coverspage" v-show="displayPage === 1"> 
+			<header class="coverpage_header"> 
+				<h1>PHOTOS</h1>
+			</header> 
 
-			<section class="right_side">
-				<section class="informations">
-					<h3>Introduction</h3>
-					<section>
-						<p>I’m Director of Product Design at Klarna in Stockholm, Sweden. I lead a design team focused on simplifying online buying of essays.I was recently interviewed about my thoughts on design, my experience at Klarna, and more.</p>
-					</section> 
+			<fscrollpanel el-id="fscrollbox" v-bind:cover-arr = "covers" v-on:selectcover="setPage"> 
+			</fscrollpanel> 
+			 
+		</div> 
+	</transition>
+
+	
+	<transition name="photospage" enter-active-class="animated slideInRight">
+		<div class="photostreampage" v-show="displayPage === 2"> 
+			<div>
+				<img v-bind:src="displayAlbum.img">
+				<h1>{{displayAlbum.title}}</h1>
+				<p>description of Album</p>	
+			</div>
+			<div> 
+				<section class="photosbox"> 
+					<img src="pictures/photos/p6.jpg" class='photo_big'>
+					<img src="pictures/photos/p10.jpg" class='photo_big'>
+					<img src="pictures/photos/p9.jpg" class='photo_big'> 
+					<img src="pictures/photos/p11.jpg" class='photo_big'>
+					<img src="pictures/photos/p12.jpg" class='photo_big'> 
+					<img src="pictures/photos/p14.jpg" class='photo_big'> 
 				</section>
-				<section class="informations">
-					<h3>Education</h3>
-					<section>
-						<p>I’m Director of Product Design at Klarna in Stockholm, Sweden. I lead a design team focused on simplifying online buying of essays.I was recently interviewed about my thoughts on design, my experience at Klarna, and more.</p>
-					</section> 
-				</section>
-				<section class="informations">
-					<h3>Work Experience</h3>
-					<section>
-						<p>I’m Director of Product Design at Klarna in Stockholm, Sweden. I lead a design team focused on simplifying online buying of essays.I was recently interviewed about my thoughts on design, my experience at Klarna, and more.</p>
-					</section> 
-				</section>
-			</section>
+			</div>
+		</div>
+	</transition> 
 
-		</section>
+</div>
+	
 
-		<section class="photosbox">
-			<img src="pictures/photos/p1.jpg" class='photo_big'>
-			<img src="pictures/photos/p2.jpg" class='photo_medium'>
-			<img src="pictures/photos/p3.jpg" class='photo_medium_omega'>
-			<img src="pictures/photos/p4.jpg" class='photo_medium'>
-			<img src="pictures/photos/p5.jpg" class='photo_medium_omega'>
-		</section>
+<div></div> 
+	
+	<script type="text/javascript">
+	//	document.getElementById("scrollbox").scrollLeft = 400;
 
-		<footer class="footer">
+		var vm = new Vue({
+			el: "#vm",
+			data:{ 
+				covers:[
+					{title: "Inutt", img:"pictures/covers/cover1.jpg"},
+					{title: "Bonobo", img:"pictures/covers/cover2.jpg"},
+					{title: "Asgeir", img:"pictures/covers/cover3.jpg"},
+					{title: "Gamile", img:"pictures/covers/cover4.jpg"},
+					{title: "Postal", img:"pictures/covers/cover5.jpg"},
+					{title: "Aliocha", img:"pictures/covers/cover6.jpg"},
+					{title: "Phoenix", img:"pictures/covers/cover7.jpg"},
+					{title: "Lomboy", img:"pictures/covers/cover8.jpg"},
+					{title: "Glass Candy", img:"pictures/covers/cover9.jpg"},
+					{title: "Performance Genius", img:"pictures/covers/cover10.jpg"},
+					{title: "Glass Candy", img:"pictures/covers/p1.jpg"},
+					{title: "Glass Candy", img:"pictures/covers/p2.jpg"},
+					{title: "Glass Candy", img:"pictures/covers/p3.jpg"},
+					{title: "Glass Candy", img:"pictures/covers/p4.jpg"},
+					{title: "Glass Candy", img:"pictures/covers/p5.jpg"}
+				], 
+				displayPage: 0,
+				displayAlbum: "Inutt"
+			},
+			methods: {  
 
-		</footer>
-	</section>
+				setPage: function(pageId, param){
+					this.displayPage = pageId;
+					if(pageId === 2){
+						this.displayAlbum = param;
+					}
+				}
+			}
+		});
 
 
+		 
+	/*	EventUtil.addHandler(document.getElementById("scrollbox"), "DOMMouseScroll", handleMouseWheel);
+		EventUtil.addHandler(document.getElementById("scrollbox"), "mousewheel", handleMouseWheel);
+		 */
+	</script>
+ 
 </body>
 </html>
+
+
+
+
